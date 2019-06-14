@@ -20,7 +20,7 @@ rosrun lane-detector lane-detector.py --model <model_name> \
 
 ### Playing over a video
 ```
-rosrun lane-detector lane-detector.py --model <model_name>
+rosrun lane-detector lane-detector.py --model <model_name> \
      --subscriber video --name <subscriber>
 ```
 
