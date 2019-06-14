@@ -33,5 +33,5 @@ The pre-trained models are placed at `detectors/pretrained-models` and can be re
 by another trained models.
 
 # To Do
--[ ] Add lane tracking
--[ ] Add more details about model training and freezing weights
+- [ ] Add lane tracking
+- [ ] Add more details about model training and freezing weights
