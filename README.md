@@ -2,6 +2,9 @@
 ROS Node to detect lane using deep learning models. The node can also be used to apply lane detection over a video.
 
 ## Usage
+### Requirements
+1. tensorflow=1.13
+2. opencv > 3.0
 
 ### Installation
 ```
@@ -25,8 +28,10 @@ rosrun lane-detector lane-detector.py --model <model_name> \
 ```
 
 ## Other Details
-Requirements:
-1. tensorflow=1.13
-2. opencv > 3.0
+The `y_range` parameter is used to decide the area in the image to localize the lane.
+The pre-trained models are placed at `detectors/pretrained-models` and can be replaced
+by another trained models.
 
-The pre-trained models can be replaced at the path `detectors/pretrained-models`. 
+# To Do
+-[ ] Add lane tracking
+-[ ] Add more details about model training and freezing weights
