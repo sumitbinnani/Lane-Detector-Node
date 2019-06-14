@@ -27,7 +27,4 @@ class LaneDetector(object):
             color = LaneDetector.COLOR_MAP[i % len(LaneDetector.COLOR_MAP)]
             cv2.polylines(mask_image, xy_.reshape([-1, 1, 2]).astype(int), True, (color[0], color[1], color[2]))
 
-        cv2.imshow('frame', mask_image)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            cv2.destroyAllWindows()
-            exit()
+        return mask_image

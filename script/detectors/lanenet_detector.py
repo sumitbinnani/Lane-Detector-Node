@@ -10,7 +10,7 @@ from .base_detector import LaneDetector
 
 
 class LanenetLaneDetector(LaneDetector):
-    DBSCAN_MIN_SAMPLES = 100
+    DBSCAN_MIN_SAMPLES = 20
     DBSCAN_EPS = 0.35
     MORPHOLOGY_KERNEL = (5, 5)
     MIN_AREA_THR = 100
@@ -70,7 +70,7 @@ class LanenetLaneDetector(LaneDetector):
             num_clusters = len(unique_labels)
             assert num_clusters > 0
         except:
-            return None
+            return [], cls._SHAPE
 
         min_y, max_y = cls.y_range
 
