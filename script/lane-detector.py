@@ -11,17 +11,20 @@ os.chdir(DIR)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Lane Detection")
-    parser.add_argument("--detector", dest="detector", help="lanenet", default="lanenet", type=str)
+    parser.add_argument("--detector", dest="detector", help="lanenet/scnn", default="lanenet", type=str)
     parser.add_argument("--subscriber", dest="subscriber", help="video/node", default='node', type=str)
     parser.add_argument("--name", dest="name", help="path to video or the node to be subscribed")
     parsed_args = parser.parse_args()
 
-    assert parsed_args.detector.lower() in ["lanenet"]
+    assert parsed_args.detector.lower() in ["lanenet", "scnn"]
     assert parsed_args.subscriber.lower() in ["node", "video"]
 
     if parsed_args.detector.lower() == "lanenet":
         from detectors.lanenet_detector import LanenetLaneDetector
         detector = LanenetLaneDetector(y_range=[151, 256])
+    else:
+        from detectors.scnn_detector import SCNNDetector
+        detector = SCNNDetector(y_range=[180, 288])
 
     if parsed_args.subscriber.lower() == "video":
         import cv2
