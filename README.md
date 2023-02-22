@@ -35,3 +35,13 @@ by another trained models.
 # To Do
 - [ ] Add lane tracking
 - [ ] Add more details about model training and freezing weights
+
+# Cite
+```
+@book{binnani2019vision,
+  title={Vision-based Autonomous Driving},
+  author={Binnani, Sumit},
+  year={2019},
+  publisher={University of California, San Diego}
+}
+```
